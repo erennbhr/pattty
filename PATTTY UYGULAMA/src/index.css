@@ -1,0 +1,44 @@
+/* src/index.css */
+
+@import "tailwindcss";
+@config "../tailwind.config.cjs";
+@import "./styles/theme.css";
+@source "../src";
+
+/* DÜZELTME: Tam ekran yerleşimi için */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Sayfa genelinde kaydırmayı engelle, içerik kendi içinde kayacak */
+}
+
+/* Mobil güvenli alanlar (Çentikli telefonlar için) */
+.pt-safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+.pb-safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Diğer stilleriniz... */
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  overscroll-behavior-y: none;
+  background-color: #f9fafb;
+}
+
+.dark body {
+  background-color: #0f0f0f; /* AppContent ile uyumlu siyah ton */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
