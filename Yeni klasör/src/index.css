@@ -1,0 +1,26 @@
+@import "./styles/theme.css";
+@import "tailwindcss";
+@source "./";
+
+/* Mobil kaydırma hissiyatı ve metin seçimi engelleme */
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  overscroll-behavior-y: none; /* Sayfa yenileme efektini engelle */
+  background-color: #f9fafb;
+}
+
+/* Dark mode arka planı */
+.dark body {
+  background-color: #1d1d1d;
+}
+
+/* Kaydırma çubuğunu gizle (daha estetik) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
