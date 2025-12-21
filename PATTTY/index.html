@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <!-- Primary Meta -->
+    <title>Pattty – Smart Pet Care App</title>
+    <meta
+      name="description"
+      content="Everything your pet needs. One smart app."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pattty – Smart Pet Care App" />
+    <meta
+      property="og:description"
+      content="Track health, routines and vets in one place."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Theme Color (light default) -->
+    <meta name="theme-color" content="#6366f1" />
+
+    <!-- ===================================== -->
+    <!-- 🌙 THEME BOOTSTRAP (CRITICAL FIX) -->
+    <!-- React'tan ÖNCE çalışır -->
+    <!-- ===================================== -->
+    <script>
+      (function () {
+        try {
+          const storedTheme = localStorage.getItem("theme");
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+
+          const theme = storedTheme || (prefersDark ? "dark" : "light");
+
+          const root = document.documentElement;
+
+          if (theme === "dark") {
+            root.classList.add("dark");
+            document
+              .querySelector('meta[name="theme-color"]')
+              ?.setAttribute("content", "#000000");
+          } else {
+            root.classList.remove("dark");
+            document
+              .querySelector('meta[name="theme-color"]')
+              ?.setAttribute("content", "#ffffff");
+          }
+        } catch (e) {
+          // Sessiz fail
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
